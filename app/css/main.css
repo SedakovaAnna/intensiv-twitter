@@ -65,9 +65,14 @@
   color: #8CB0BB;
 }
 .stats-count {
-  color: #087DE1;
+  color: #087de1;
   font-size: 22px;
   font-weight: 600;
+}
+.card-title-only {
+  padding: 1.25rem;
+  border-radius: 0;
+  border-radius: 0.25rem 0.25rem 0 0;
 }
 .tweet-card {
   padding: 1.25rem;

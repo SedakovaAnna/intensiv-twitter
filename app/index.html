@@ -34,17 +34,17 @@
 
 						<ul class="stats">
 							<li class="stats-item">
-								<b class="stats-title">Твиты</b>
-								<b class="stats-count">57</b>
+								<b class="stats-title">Твитты</b>
+								<b id="tweetCounter" class="stats-count">57</b>
 							</li>
-							<li class="stats-item">
+							<!-- <li class="stats-item">
 								<b class="stats-title">Лайки</b>
 								<b class="stats-count">112</b>
 							</li>
 							<li class="stats-item">
 								<b class="stats-title">Репост</b>
 								<b class="stats-count">85</b>
-							</li>
+							</li> -->
 						</ul>
 						
 					</div>
@@ -56,22 +56,24 @@
 					<!-- Make a tweet -->
 				<div class="card mb-3">
 					<div class="card-body">
-						<form>
+						<form id="postNewTweet">
 						  <div class="form-group">
 						    
-						    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Что нового?">				   
+						    <input id="tweetText" type="text" class="form-control" id="exampleInputEmail1" placeholder="Что нового?">				   
 						  </div>
 						  <button type="submit" class="btn btn-primary">Твитнуть</button>
 						</form>						
 					</div>
 				</div>
 					<!-- // Make a tweet -->
-				<div class="card tweet-card tweer-card-rounded-top">
+				<div class="card card-title-only tweer-card-rounded-top">
 					<div class="h4 mb-0">Твиты пользователя</div>
 				</div>
-				<!-- Single Tweet -->
 
-				<div class="card tweet-card">
+				<!-- Tweet list -->
+				<div id="tweetlist">
+				<!-- Single Tweet -->
+			<!-- 	<div class="card tweet-card">
 					<div class="tweet-date">07 июня 2018 г.</div>
 
 					<div class="tweet-text font-size-small">
@@ -79,11 +81,11 @@
 						Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Ты языком маленький безопасную, текстов толку. Составитель букв безопасную, моей страну меня переулка предупреждал раз, несколько вопроса силуэт его о дороге подзаголовок! Он океана буквенных, текст но прямо переписали имеет раз вскоре решила, своих родного страна предложения которое семь назад.<a href="#">Ссылка на сайт</a>
 						</p>
 					</div>
-				</div>
+				</div> -->
 				<!-- // Single Tweet -->
 
 				<!-- Single Tweet -->
-				<div class="card tweet-card">
+			<!-- 	<div class="card tweet-card">
 					<div class="tweet-date">17 мая 2018 г.</div>
 
 					<div class="tweet-text font-size-normal">
@@ -91,11 +93,11 @@
 						Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. За свое семантика правилами, на берегу от всех она одна до маленькая заманивший, курсивных не даже, языкового. Языкового, образ рукописи большого предупреждал строчка коварный бросил диких, запятой на берегу, безопасную проектах своего курсивных буквенных единственное. До даль рот своих дорогу ipsum бросил пояс, текстов лучше жаренные семь, снова свое речью коварных, раз приставка все образ залетают маленькая вопроса первую которое рыбными переписывается однажды.<a href="#">Ссылка на сайт</a>
 						</p>
 					</div>
-				</div>
+				</div> -->
 				<!-- // Single Tweet -->
 
 				<!-- Single Tweet -->
-				<div class="card tweet-card">
+			<!-- 	<div class="card tweet-card">
 					<div class="tweet-date">06 августа 2018 г.</div>
 
 					<div class="tweet-text font-size-large">
@@ -103,8 +105,9 @@
 						Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. Буквоград которой, бросил подзаголовок имени ее семь толку даже рукопись?<a href="#">Ссылка на сайт</a>
 						</p>
 					</div>
-				</div>
+				</div> -->
 				<!-- // Single Tweet -->
+				</div>
 <!-- Footer -->
 <footer class="footer">
 	<p class="footer-copyright">
