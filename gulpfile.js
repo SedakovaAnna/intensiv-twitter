@@ -1,29 +1,34 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var sass       = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var notify = require("gulp-notify");
+var gulp 		= require('gulp'),
+	browserSync = require('browser-sync'),
+	less        = require('gulp-less'),
+	notify      = require('gulp-notify'),
+	plumber     = require('gulp-plumber');
 
 
-// Static Server + watching scss/html files
-gulp.task('serve', ['sass'], function() {
+gulp.task("server",['less'], function(){
 
-    browserSync.init({
-        server: "app/"
-    });
-
-    gulp.watch("app/sass/*.scss", ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
+	browserSync.init ({
+		server:{ baseDir: './app/'}
+	});
+	gulp.watch('app/**/*.html').on('change', browserSync.reload);
+	gulp.watch('app/less/**/*.less', ['less']);
+	// gulp.watch('app/**/*.css').on('change', browserSync.reload);
 });
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
-    return gulp.src("app/sass/*.scss")
-        .pipe(sass({includePaths: ['app/sass']}).on("error", notify.onError()))
-        .pipe(autoprefixer(['last 15 versions']))
-        .pipe(gulp.dest("app/css"))
-        .pipe(browserSync.stream());
+gulp.task("less", function(){
+	return gulp.src('./app/less/**/*.less')
+	.pipe(plumber({
+		errorHandler: notify.onError(function(err){
+			return {
+				title: 'less',
+				sound: false,
+				message: err.message
+			}
+		})
+	}))
+	.pipe(less())
+	.pipe(gulp.dest('./app/css'))
+	.pipe(browserSync.stream());
 });
 
-gulp.task('default', ['serve']);
-
+gulp.task('default', ['server']);
